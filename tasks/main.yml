@@ -1,6 +1,6 @@
 ---
 
-- name: Install Homebrew packages.
+- name: "Install rbenv & ruby-build via Homebrew."
   homebrew: name={{ item }}
   with_items:
     - rbenv
