@@ -1,0 +1,23 @@
+dependencies:
+  - danbohea.homebrew
+
+galaxy_info:
+  author: danbohea
+  description: Installs rbenv on macOS.
+  license: MIT
+  min_ansible_version: 2.1
+  platforms:
+  - name: MacOSX
+    versions:
+    - '10.10'
+    - '10.11'
+    - '10.12'
+  galaxy_tags:
+    - cask
+    - homebrew
+    - mac
+    - macos
+    - macsible
+    - osx
+    - rbenv
+    - ruby
