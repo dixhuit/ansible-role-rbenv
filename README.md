@@ -12,7 +12,13 @@ Installs rbenv on macOS.
 
 ## Role Variables
 
-See defaults/main.yml
+```
+rbenv_default_ruby_version: "2.1.2"
+
+rbenv_global_gems:
+  - "bundler"
+  - "travis"
+```
 
 
 ## Dependencies
@@ -30,6 +36,7 @@ See defaults/main.yml
     - role: ansible-role-rbenv
 ```
 
+
 ## License
 
 MIT
@@ -37,4 +44,4 @@ MIT
 
 ## Author Information
 
-This role was created by [Dan Bohea](http://bohea.co.uk) primarily for use with [Macsible](https://github.com/macsible/macsible).
+This role was created by [Dan Bohea](https://bohea.uk) primarily for use with [Macsible](https://github.com/macsible/macsible).
