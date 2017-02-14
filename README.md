@@ -1,5 +1,7 @@
 # Ansible role: rbenv
 
+[![Build Status](https://travis-ci.org/danbohea/ansible-role-rbenv.svg?branch=master)](https://travis-ci.org/danbohea/ansible-role-rbenv)
+
 Installs rbenv on macOS.
 
 
