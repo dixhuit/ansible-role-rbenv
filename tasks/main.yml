@@ -19,7 +19,7 @@
 - name: Add required eval line to .bash_profile
   lineinfile:
     path: "/Users/{{ ansible_env.USER }}/.bash_profile"
-    line: 'eval "$(rbenv init -)"'
+    line: "eval '$(rbenv init -)'"
 
 - name: Check the current rbenv global Ruby version.
   shell: >
