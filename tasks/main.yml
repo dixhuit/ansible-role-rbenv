@@ -34,7 +34,7 @@
     rbenv global {{ rbenv_default_ruby_version }} && rbenv rehash
   when: rbenv_global.stdout != rbenv_default_ruby_version
 
-# NOTE: We must set user_install=no to install gems to
+# We must set `user_install=no` to install gems to
 # ~/.rbenv/versions/{{ rbenv_ruby_version }}/lib/ruby/gems/.
 # If not, gems are installed to /usr/local/lib/ruby/gems/ (no good).
 # Credit: https://github.com/hnakamur/ansible-role-osx-rbenv
