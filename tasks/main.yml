@@ -11,16 +11,22 @@
 # the command as if we were in a login shell (to make sure rbenv kicks in).
 
 - name: Install Ruby via rbenv.
-  command: bash -lc "rbenv install {{ rbenv_default_ruby_version }}"
-           creates=/Users/{{ ansible_env.USER }}/.rbenv/versions/{{ rbenv_default_ruby_version }}
+  command: >
+    eval "$(rbenv init -)";
+    rbenv install {{ rbenv_default_ruby_version }}
+    creates=/Users/{{ ansible_env.USER }}/.rbenv/versions/{{ rbenv_default_ruby_version }}
 
 - name: Check the current rbenv global Ruby version.
-  command: bash -lc "rbenv global"
+  command: >
+    eval "$(rbenv init -)";
+    rbenv global
   register: rbenv_global
   changed_when: rbenv_global.stdout != rbenv_default_ruby_version
 
 - name: Set the global rbenv Ruby version.
-  command: bash -lc "rbenv global {{ rbenv_default_ruby_version }} && rbenv rehash"
+  command: >
+    eval "$(rbenv init -)";
+    rbenv global {{ rbenv_default_ruby_version }} && rbenv rehash
   when: rbenv_global.stdout != rbenv_default_ruby_version
 
 # NOTE: We must set user_install=no to install gems to

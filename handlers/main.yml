@@ -1,3 +1,5 @@
 ---
 - name: rbenv rehash
-  command: bash -lc "rbenv rehash"
+  command: >
+    eval "$(rbenv init -)";
+    rbenv rehash
