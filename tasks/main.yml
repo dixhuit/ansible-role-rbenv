@@ -16,6 +16,11 @@
     rbenv install {{ rbenv_default_ruby_version }}
     creates=/Users/{{ ansible_env.USER }}/.rbenv/versions/{{ rbenv_default_ruby_version }}
 
+- name: Add required eval line to .bash_profile
+  lineinfile:
+    path: ~/.bash_profile
+    line: 'eval "$(rbenv init -)"'
+
 - name: Check the current rbenv global Ruby version.
   command: >
     eval "$(rbenv init -)";
