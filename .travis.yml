@@ -14,7 +14,7 @@ matrix:
 
 before_install:
   # Uninstall preinstalled RVM
-  - rvm implode -y
+  - rvm implode --yes
   - gem uninstall rvm
 
 install:
