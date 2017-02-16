@@ -18,7 +18,8 @@
 
 - name: Ensure required eval line is in .bash_profile.
   lineinfile:
-    dest: "/Users/{{ ansible_env.USER }}/.bash_profile"
+    # dest: "/Users/{{ ansible_env.USER }}/.bash_profile"
+    dest: ~/.bash_profile
     line: "eval \"$(rbenv init -)\""
 
 - name: Check the current rbenv global Ruby version.
