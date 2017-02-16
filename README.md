@@ -44,4 +44,4 @@ MIT
 
 ## Author Information
 
-This role was created by [Dan Bohea](https://bohea.uk) primarily for use with [Macsible](https://github.com/macsible/macsible).
+This role was created by [Dan Bohea](https://bohea.uk).

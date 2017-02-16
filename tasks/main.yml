@@ -16,6 +16,7 @@
     rbenv install {{ rbenv_default_ruby_version }}
     creates=/Users/{{ ansible_env.USER }}/.rbenv/versions/{{ rbenv_default_ruby_version }}
 
+# TODO: Check that .bash_profile exists first
 - name: Ensure required eval line is in .bash_profile.
   lineinfile:
     # dest: "/Users/{{ ansible_env.USER }}/.bash_profile"
