@@ -1,14 +1,17 @@
 ---
 
+# Credit: https://github.com/ctorgalson/ansible-role-rbenv
+- name: Check for the existence of rvm (not compatible with rbenv).
+  command: "whereis -b rvm"
+  register: rvm_status
+  failed_when: rvm_status.stdout.find("/") != -1
+
 - name: "Install rbenv & ruby-build via Homebrew."
   homebrew: name={{ item }}
   with_items:
     - rbenv
     - ruby-build
   notify: brew cleanup
-
-# The command module gets a fair bit of use below as we need to tell bash to run
-# the command as if we were in a login shell (to make sure rbenv kicks in).
 
 - name: Install Ruby via rbenv.
   shell: >
