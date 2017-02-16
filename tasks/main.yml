@@ -22,7 +22,6 @@
 # TODO: Check that .bash_profile exists first
 - name: Ensure required eval line is in .bash_profile.
   lineinfile:
-    # dest: "/Users/{{ ansible_env.USER }}/.bash_profile"
     dest: ~/.bash_profile
     line: "eval \"$(rbenv init -)\""
 
