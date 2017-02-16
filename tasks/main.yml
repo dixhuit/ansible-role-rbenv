@@ -4,6 +4,7 @@
 - name: Check for the existence of rvm (not compatible with rbenv).
   command: "whereis -b rvm"
   register: rvm_status
+  changed_when: false
   failed_when: rvm_status.stdout.find("/") != -1
 
 - name: "Install rbenv & ruby-build via Homebrew."
