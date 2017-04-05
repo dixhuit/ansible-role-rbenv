@@ -22,6 +22,7 @@
 
 # TODO: This is a bit too heavy handed.
 # Probably better to advise the user to add the required line to their .bash_profile themselves.
+# Could possibly still provide an opt-in only solution.
 # - name: Ensure required eval line is in .bash_profile.
 #   lineinfile:
 #     dest: ~/.bash_profile
