@@ -20,14 +20,6 @@
     rbenv install {{ rbenv_default_ruby_version }}
     creates={{ ansible_env.HOME }}/.rbenv/versions/{{ rbenv_default_ruby_version }}
 
-# TODO: This is a bit too heavy handed.
-# Probably better to advise the user to add the required line to their .bash_profile themselves.
-# Could possibly still provide an opt-in only solution.
-# - name: Ensure required eval line is in .bash_profile.
-#   lineinfile:
-#     dest: ~/.bash_profile
-#     line: "eval \"$(rbenv init -)\""
-
 - name: Check the current rbenv global Ruby version.
   shell: >
     eval "$(rbenv init -)";
@@ -49,3 +41,9 @@
   gem: name={{ item }} state=latest user_install=no executable=~/.rbenv/shims/gem
   with_items: "{{ rbenv_global_gems }}"
   notify: rbenv rehash
+
+- name: Ensure required eval line is in .bash_profile.
+  lineinfile:
+    dest: ~/.bash_profile
+    line: "eval \"$(rbenv init -)\""
+  when: rbenv_update_bash_profile

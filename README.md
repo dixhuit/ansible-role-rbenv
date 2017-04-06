@@ -12,12 +12,18 @@ Installs rbenv on macOS.
 
 ## Role Variables
 
-```
+```YAML
+# The default version of Ruby to be initially installed via rbenv.
 rbenv_default_ruby_version: "2.1.2"
 
+# Any global gems to be installed with the default Ruby version.
 rbenv_global_gems:
   - "bundler"
   - "travis"
+
+# Whether the role should add `eval \"$(rbenv init -)\"` line to .bash_profile.
+# If set to false you'll want to consider adding this yourself.
+rbenv_update_bash_profile: false
 ```
 
 
