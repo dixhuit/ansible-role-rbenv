@@ -22,7 +22,7 @@ rbenv_global_gems:
   - "travis"
 
 # Whether the role should add the line `eval \"$(rbenv init -)\"` to .bash_profile.
-# If set to false you'll want to consider adding this yourself.
+# If set to false you'll want to consider adding this line yourself.
 rbenv_update_bash_profile: false
 ```
 
