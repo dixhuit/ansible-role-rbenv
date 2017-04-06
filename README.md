@@ -34,7 +34,7 @@ rbenv_update_bash_profile: false
 
 ## Example Playbook
 
-```
+```YAML
 - hosts: macbook
   connection: local
 
