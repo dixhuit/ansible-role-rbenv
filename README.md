@@ -21,7 +21,7 @@ rbenv_global_gems:
   - "bundler"
   - "travis"
 
-# Whether the role should add `eval \"$(rbenv init -)\"` line to .bash_profile.
+# Whether the role should add the line `eval \"$(rbenv init -)\"` to .bash_profile.
 # If set to false you'll want to consider adding this yourself.
 rbenv_update_bash_profile: false
 ```
