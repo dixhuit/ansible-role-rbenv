@@ -7,12 +7,12 @@ Installs rbenv on macOS.
 
 ## Requirements
 
-- macOS 10.10, 10.11 or 10.12
+- macOS 10.11 or 10.12
 
 
 ## Role Variables
 
-```YAML
+```yaml
 # The default version of Ruby to be initially installed via rbenv.
 rbenv_default_ruby_version: "2.1.2"
 
@@ -34,7 +34,7 @@ rbenv_update_bash_profile: false
 
 ## Example Playbook
 
-```YAML
+```yaml
 - hosts: macbook
   connection: local
 
